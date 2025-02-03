@@ -22,9 +22,6 @@ def setup_websockify():
         unix_socket = False
         vnc_args = [vncserver, '-localhost', '-rfbport', '{port}']
 
-    # Check for xstartup in labuser's home directory
-    if not os.path.exists(os.path.join(LABUSER_HOME, '.vnc/xstartup')):
-        vnc_args.extend(['-xstartup', os.path.join(HERE, 'share/xstartup')])
 
     vnc_command = shlex.join(
         vnc_args
