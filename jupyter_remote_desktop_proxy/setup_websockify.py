@@ -38,6 +38,8 @@ def setup_websockify():
     # Construct command that runs as labuser
     command = f'cd {os.getcwd()} && HOME={LABUSER_HOME} su -s /bin/sh labuser -c "{vnc_command}"'
 
+    print(command)
+    
     return {
         'command': ['/bin/sh', '-c', command],
         'timeout': 30,
